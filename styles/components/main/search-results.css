@@ -1,0 +1,213 @@
+.search-results {
+    background-color: var(--clr-gray--darker);
+    color: var(--clr-light-gray);
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-inline: auto;
+    border-radius: 12px;
+    max-width: 500px;
+    min-height: 15rem;
+}
+.search-results__welcome {
+    text-align: center;
+    margin-top: 3rem;
+    max-width: 21ch;
+    margin-inline: auto;
+}
+
+/* SEARCH-RESULTS TOP */
+
+.search-results__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.75rem;
+    padding-inline: 1.125rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-results__top-results {
+    font-weight: 500;
+    font-size: var(--text-sm);
+}
+.search-results__top--quantity {
+    font-weight: 700;
+}
+
+.search-results__top-sorting {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-results__top--icon {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.search-results__top-btn {
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    background-color: var(--clr-light-gray);
+    border-radius: 6px;
+    color: var(--clr-gray--darker);
+    transition: background-color 0.3s, color 0.3s;
+}
+.search-results__top-btn:not(
+        .search-results__top-btn--active
+    ).search-results__top-btn:hover {
+    background-color: var(--clr-gray);
+}
+.search-results__top-btn--active {
+    background-color: #334155;
+    color: var(--clr-light-gray);
+}
+
+/* SEARCH RESULTS LIST */
+.search-results__list {
+    list-style: none;
+    z-index: 2;
+}
+
+.result-item {
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+.result-item:hover {
+    background-color: #2b3b55;
+}
+
+.result {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.result__img-container {
+    width: 100%;
+    height: 6.5rem;
+}
+.result__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.result__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result__title {
+    font-size: var(--text-xl);
+    line-height: 1.1;
+}
+.result__date {
+    font-size: var(--text-sm);
+    opacity: 0.9;
+}
+
+.result__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.result__bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.result__icon {
+    width: 1.25rem;
+}
+.result__text {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+/* .result__like-btn .result__text {
+    font-size: var(--text-base);
+}
+.result__like-btn:hover .result__icon {
+    fill: var(--clr-gray); 
+}*/
+
+/* PAGINATION */
+.search-results__pagination {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    margin-top: auto;
+}
+
+.page__btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-light-gray);
+    padding: 0.3em 0.6em;
+    border-radius: 1000px;
+    color: var(--clr-gray--darker);
+    transition: background-color 0.3s;
+}
+.page__btn:first-child {
+    padding-right: 1.25em;
+}
+.page__btn:last-child {
+    padding-left: 1.25em;
+}
+.page__btn:hover {
+    background-color: var(--clr-gray);
+}
+.page__next--number,
+.page__back--number {
+    margin-left: 0.25rem;
+}
+.page__btn--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.page__btn--icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+@media (width >= 1024px) {
+    .search-results {
+        width: 100%;
+        max-width: initial;
+    }
+    .search-results__welcome {
+        display: none;
+    }
+
+    .result__title {
+        font-size: var(--text-xl);
+        font-weight: 500;
+    }
+    .result__date {
+        font-size: var(--text-base);
+    }
+
+    .result__icon {
+        width: 1.5rem;
+    }
+    .result__text {
+        font-size: var(--text-base);
+    }
+}

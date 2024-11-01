@@ -1,0 +1,15 @@
+.main {
+    padding-top: 0.5rem;
+    max-width: 1136px;
+    margin-inline: auto;
+}
+
+@media (width >= 1024px) {
+    .main {
+        display: grid;
+        grid-template-columns: 425px 1fr;
+        padding-top: 2rem;
+        padding-inline: 1.25rem;
+        gap: 1.5rem;
+    }
+}

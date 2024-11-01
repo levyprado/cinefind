@@ -1,0 +1,102 @@
+.header {
+    padding-top: 3.5rem;
+    color: var(--clr-light);
+}
+
+.header__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    color: var(--clr-light);
+    position: relative;
+}
+
+.liked-list {
+    list-style: none;
+    position: fixed;
+    top: 6.25rem;
+    left: 52.5%;
+    translate: -52.5% 0;
+    color: var(--clr-light-gray);
+    z-index: 3;
+    min-width: 300px;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s, visibility 0.6s;
+}
+.liked-list--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.liked-list .result-item {
+    background-color: #2b3b55;
+}
+.liked-list .result-item:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.liked-list .result-item:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.liked-list .result-item:hover {
+    background-color: #3c5277;
+}
+.liked-list .result__title {
+    font-size: var(--text-lg);
+}
+.liked-list .result__date {
+    font-size: var(--text-sm);
+}
+.liked-list .result__icon {
+    width: 1.25rem;
+}
+.liked-list .result__text {
+    font-size: var(--text-sm);
+}
+
+.header__logo {
+    text-decoration: none;
+    color: var(--clr-primary);
+    font-weight: 500;
+    font-size: var(--text-2xl);
+}
+.header__logo--effect {
+    font-style: italic;
+    font-weight: 900;
+    color: var(--clr-light);
+}
+
+.header__btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    position: relative;
+    color: var(--clr-light-gray);
+    transition: color 0.3s;
+}
+.header__btn:hover {
+    color: var(--clr-light);
+}
+.header__btn::before {
+    content: '';
+    cursor: initial;
+    position: absolute;
+    left: -1.25rem;
+    width: 1px;
+    height: 100%;
+    background-color: var(--clr-gray);
+}
+.header__btn--icon {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+@media (width >= 475px) {
+    .header__logo {
+        font-size: var(--text-3xl);
+    }
+}
